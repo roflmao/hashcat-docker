@@ -1,4 +1,6 @@
 FROM nvidia/cuda:7.5-runtime
+ENV DEBIAN_FRONTEND noninteractive
+ENV HOME /root
 RUN apt-get update && apt-get install -y git nvidia-opencl-icd-352 build-essential
 WORKDIR /home
 RUN git clone https://github.com/hashcat/hashcat.git
